@@ -1,3 +1,4 @@
+import benchmark from "benchmark";
 import { AwsCrc32 } from "@aws-crypto/crc32";
 import { AwsCrtCrc32 } from "./AwsCrtCrc32.js";
 import { equal } from "assert";
@@ -12,6 +13,7 @@ const awsCrc32 = new AwsCrc32();
 const awsCrtCrc32 = new AwsCrtCrc32();
 
 for (const bufferSizeInKB of [16, 64, 256, 1024]) {
+  const suite = new benchmark.Suite();
   const testBuffer = generateBuffer(bufferSizeInKB * 1024);
 
   awsCrc32.update(testBuffer);
@@ -22,6 +24,23 @@ for (const bufferSizeInKB of [16, 64, 256, 1024]) {
     (await awsCrtCrc32.digest()).toString(16)
   );
 
-  awsCrc32.reset();
-  awsCrtCrc32.reset();
+  console.log(`\nBenchmark for buffer of size ${bufferSizeInKB} KB:`);
+  suite
+    .add("awsCrc32", async () => {
+      awsCrc32.reset();
+      awsCrc32.update(testBuffer);
+      await awsCrc32.digest();
+    })
+    .add("awsCrtCrc32", async () => {
+      awsCrtCrc32.reset();
+      awsCrtCrc32.update(testBuffer);
+      await awsCrtCrc32.digest(16);
+    })
+    .on("cycle", (event) => {
+      console.log(String(event.target));
+    })
+    .on("complete", () => {
+      console.log("Fastest is " + suite.filter("fastest").map("name"));
+    })
+    .run();
 }
