@@ -4,7 +4,7 @@
   "description": "Benchmark AWS Crypto JS checksum implementation vs ones provided by AWS CRT",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bench": "node src/bench.js"
   },
   "keywords": [
     "benchmark",
@@ -15,6 +15,9 @@
   "license": "MIT",
   "packageManager": "yarn@4.5.0",
   "dependencies": {
+    "@aws-crypto/crc32": "^5.2.0",
+    "aws-crt": "^1.22.0",
     "benchmark": "^2.1.4"
-  }
+  },
+  "type": "module"
 }
