@@ -1,0 +1,23 @@
+{
+  "name": "benchmark-aws-crt-crc32",
+  "version": "1.0.0",
+  "description": "Benchmark AWS Crypto JS checksum implementation vs ones provided by AWS CRT",
+  "main": "index.js",
+  "scripts": {
+    "bench": "node src/bench.js"
+  },
+  "keywords": [
+    "benchmark",
+    "aws",
+    "crc32"
+  ],
+  "author": "Kamat, Trivikram <trivikr.dev@gmail.com>",
+  "license": "MIT",
+  "packageManager": "yarn@4.5.0",
+  "dependencies": {
+    "@aws-crypto/crc32": "^5.2.0",
+    "aws-crt": "^1.22.0",
+    "benchmark": "^2.1.4"
+  },
+  "type": "module"
+}
