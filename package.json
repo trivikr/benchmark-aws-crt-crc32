@@ -1,7 +1,7 @@
 {
   "name": "benchmark-aws-crt-crc32",
   "version": "1.0.0",
-  "description": "Benchmark AWS Crypto JS checksum implementation vs ones provided by AWS CRT",
+  "description": "Benchmark AWS Crypto JS checksum implementation vs ones provided by AWS CRT vs Node.js built-in",
   "main": "index.js",
   "scripts": {
     "bench": "node src/bench.js"
