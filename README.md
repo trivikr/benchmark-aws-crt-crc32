@@ -14,26 +14,26 @@ Benchmark AWS Crypto JS checksum implementation vs ones provided by AWS CRT vs N
 $ yarn bench
 
 Benchmark for buffer of size 16 KB:
-awsCrc32 x 5,878 ops/sec ±0.47% (98 runs sampled)
-awsCrtCrc32 x 396,066 ops/sec ±1.08% (93 runs sampled)
-nodeJsCrc32 x 562,327 ops/sec ±14.53% (83 runs sampled)
-Fastest is nodeJsCrc32
+@aws-crypto/crc32@5.2.0 x 5,699 ops/sec ±0.44% (92 runs sampled)
+aws-crt@1.22.0 x 389,210 ops/sec ±1.02% (89 runs sampled)
+node@20.17.0 x 567,192 ops/sec ±6.27% (81 runs sampled)
+Fastest is node@20.17.0
 
 Benchmark for buffer of size 64 KB:
-awsCrc32 x 855 ops/sec ±1.76% (65 runs sampled)
-awsCrtCrc32 x 112,400 ops/sec ±1.94% (83 runs sampled)
-nodeJsCrc32 x 294,393 ops/sec ±7.50% (89 runs sampled)
-Fastest is nodeJsCrc32
+@aws-crypto/crc32@5.2.0 x 780 ops/sec ±5.67% (91 runs sampled)
+aws-crt@1.22.0 x 112,347 ops/sec ±1.81% (90 runs sampled)
+node@20.17.0 x 282,874 ops/sec ±3.52% (80 runs sampled)
+Fastest is node@20.17.0
 
 Benchmark for buffer of size 256 KB:
-awsCrc32 x 278 ops/sec ±3.37% (76 runs sampled)
-awsCrtCrc32 x 25,769 ops/sec ±6.58% (80 runs sampled)
-nodeJsCrc32 x 92,877 ops/sec ±1.91% (92 runs sampled)
-Fastest is nodeJsCrc32
+@aws-crypto/crc32@5.2.0 x 267 ops/sec ±1.13% (86 runs sampled)
+aws-crt@1.22.0 x 30,813 ops/sec ±1.07% (91 runs sampled)
+node@20.17.0 x 91,469 ops/sec ±1.14% (94 runs sampled)
+Fastest is node@20.17.0
 
 Benchmark for buffer of size 1024 KB:
-awsCrc32 x 58.60 ops/sec ±6.01% (62 runs sampled)
-awsCrtCrc32 x 7,273 ops/sec ±6.00% (89 runs sampled)
-nodeJsCrc32 x 22,771 ops/sec ±4.53% (92 runs sampled)
-Fastest is nodeJsCrc32
+@aws-crypto/crc32@5.2.0 x 63.13 ops/sec ±0.69% (67 runs sampled)
+aws-crt@1.22.0 x 7,908 ops/sec ±0.46% (97 runs sampled)
+node@20.17.0 x 23,446 ops/sec ±2.88% (96 runs sampled)
+Fastest is node@20.17.0
 ```
